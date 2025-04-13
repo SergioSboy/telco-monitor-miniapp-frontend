@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Результат проверки</title>
+    <style>
+        :root {
+            --primary: #00B956;
+            --bg: #f9fafb;
+            --text: #1e1e1e;
+            --good: #10b981;
+            --medium: #facc15;
+            --bad: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        main {
+            flex: 1;
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .metric {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .metric-title {
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+
+        .metric-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .metric.good   .metric-value { color: var(--good); }
+        .metric.medium .metric-value { color: var(--medium); }
+        .metric.bad    .metric-value { color: var(--bad); }
+
+        .advice {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            text-align: center;
+            color: #374151;
+            max-width: 320px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-around;
+            padding: 0.75rem 0.5rem;
+        }
+
+        .nav-btn {
+            flex: 1;
+            margin: 0 0.25rem;
+            padding: 0.6rem 0.4rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: #f3f4f6;
+            color: #444;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn.active {
+            background-color: var(--primary);
+            color: white;
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body>
+<header>Результаты теста</header>
+
+<main>
+    <div class="summary">Связь отличная 🎉</div>
+
+    <div class="metrics">
+        <div class="metric good">
+            <div class="metric-title">Скорость загрузки</div>
+            <div class="metric-value">42.5 Мбит/с</div>
+        </div>
+        <div class="metric good">
+            <div class="metric-title">Скорость отдачи</div>
+            <div class="metric-value">12.1 Мбит/с</div>
+        </div>
+        <div class="metric medium">
+            <div class="metric-title">Пинг</div>
+            <div class="metric-value">88 мс</div>
+        </div>
+    </div>
+
+    <div class="advice">
+        Для лучшего сигнала — оставайтесь в зоне покрытия 4G или переключитесь в 3G в загруженных местах.
+    </div>
+
+    <nav>
+        <button class="nav-btn active">Связь</button>
+        <button class="nav-btn">Жалобы</button>
+        <button class="nav-btn">История</button>
+        <button class="nav-btn">Советы</button>
+    </nav>
+</main>
+</body>
+</html>

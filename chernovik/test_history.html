@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>История измерений</title>
+    <style>
+        :root {
+            --primary: #00B956;
+            --bg: #f9fafb;
+            --text: #1e1e1e;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        main {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .test-entry {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            font-size: 0.9rem;
+        }
+
+        .test-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.3rem;
+        }
+
+        .label {
+            color: #6b7280;
+        }
+
+        .value {
+            font-weight: 600;
+        }
+
+        .date {
+            margin-top: 0.6rem;
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-around;
+            padding: 0.75rem 0.5rem;
+        }
+
+        .nav-btn {
+            flex: 1;
+            margin: 0 0.25rem;
+            padding: 0.6rem 0.4rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: #f3f4f6;
+            color: #444;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn.active {
+            background-color: var(--primary);
+            color: white;
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body>
+<header>История измерений</header>
+
+<main>
+    <div class="test-entry">
+        <div class="test-row"><span class="label">Ping:</span> <span class="value">42 мс</span></div>
+        <div class="test-row"><span class="label">Download:</span> <span class="value">35.6 Мбит/с</span></div>
+        <div class="test-row"><span class="label">Upload:</span> <span class="value">8.2 Мбит/с</span></div>
+        <div class="test-row"><span class="label">Адрес:</span> <span class="value">Москва, ул. Тверская, 10</span></div>
+        <div class="date">10 апр, 14:23</div>
+    </div>
+
+    <div class="test-entry">
+        <div class="test-row"><span class="label">Ping:</span> <span class="value">42 мс</span></div>
+        <div class="test-row"><span class="label">Download:</span> <span class="value">35.6 Мбит/с</span></div>
+        <div class="test-row"><span class="label">Upload:</span> <span class="value">8.2 Мбит/с</span></div>
+        <div class="test-row"><span class="label">Адрес:</span> <span class="value">Москва, ул. Тверская, 10</span></div>
+        <div class="date">10 апр, 14:23</div>
+    </div>
+</main>
+
+<nav>
+    <button class="nav-btn">Связь</button>
+    <button class="nav-btn">Жалобы</button>
+    <button class="nav-btn active">История</button>
+    <button class="nav-btn">Советы</button>
+</nav>
+</body>
+</html>
