@@ -7,8 +7,6 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<TestFlowPage />} />
-          <Route path="/test" element={<TestFlowPage />} />
-          <Route path="/result" element={<TestFlowPage />} />
           <Route path="/history" element={<TestFlowPage />} />
           <Route path="/complaints" element={<TestFlowPage />} />
           <Route path="/chat/:id" element={<TestFlowPage />} />
