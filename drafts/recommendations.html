@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Советы</title>
+    <style>
+        :root {
+            --primary: #00B956;
+            --bg: #f9fafb;
+            --text: #1e1e1e;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        main {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .tip-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .tip-text {
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .tip-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-around;
+            padding: 0.75rem 0.5rem;
+        }
+
+        .nav-btn {
+            flex: 1;
+            margin: 0 0.25rem;
+            padding: 0.6rem 0.4rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: #f3f4f6;
+            color: #444;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn.active {
+            background-color: var(--primary);
+            color: white;
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body>
+<header>Советы по улучшению связи</header>
+
+<main>
+    <div class="tip-card">
+        <div class="tip-text">
+            Переключитесь с 5G на 4G — в перегруженных районах 4G может быть стабильнее.
+        </div>
+        <a class="tip-link" href="#">Как переключить сеть</a>
+    </div>
+
+    <div class="tip-card">
+        <div class="tip-text">
+            Попробуйте включить и выключить режим полёта — это перезапустит соединение с сетью.
+        </div>
+    </div>
+
+    <div class="tip-card">
+        <div class="tip-text">
+            Убедитесь, что у вас установлено последнее обновление системы и прошивка модема.
+        </div>
+        <a class="tip-link" href="#">Проверить обновления</a>
+    </div>
+
+    <div class="tip-card">
+        <div class="tip-text">
+            Переместитесь ближе к окну или на открытую местность — сигнал может усиливаться.
+        </div>
+    </div>
+</main>
+
+<nav>
+    <button class="nav-btn">Связь</button>
+    <button class="nav-btn">Жалобы</button>
+    <button class="nav-btn">История</button>
+    <button class="nav-btn active">Советы</button>
+</nav>
+</body>
+</html>
