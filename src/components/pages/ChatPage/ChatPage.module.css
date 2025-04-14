@@ -1,0 +1,100 @@
+:root {
+    --primary: #00B956;
+    --bg: #f3f4f6;
+    --text: #1e1e1e;
+}
+
+.page {
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.status {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+    background-color: #fef9c3;
+    color: #b45309;
+}
+
+.chat {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.message {
+    max-width: 80%;
+    padding: 0.7rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    position: relative;
+}
+
+.user {
+    align-self: flex-end;
+    background-color: var(--primary);
+    color: white;
+    border-bottom-right-radius: 0;
+}
+
+.support {
+    align-self: flex-start;
+    background-color: white;
+    border-bottom-left-radius: 0;
+}
+
+.time {
+    font-size: 0.65rem;
+    color: #888;
+    margin-top: 0.2rem;
+    text-align: right;
+}
+
+.inputWrapper {
+    display: flex;
+    border-top: 1px solid #e5e7eb;
+    background: white;
+    padding: 0.5rem;
+}
+
+.inputWrapper input {
+    flex: 1;
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+}
+
+.inputWrapper button {
+    margin-left: 0.5rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}

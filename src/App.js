@@ -4,6 +4,7 @@ import TestFlowPage from "./components/pages/TestFlowPage/TestFlowPage";
 import TestHistoryPage from "./components/pages/TestHistoryPage/TestHistoryPage";
 import ComplaintsPage from "./components/pages/ComplaintsPage/ComplaintsPage";
 import RecommendationsPage from "./components/pages/RecommendationsPage/RecommendationsPage";
+import ChatPage from "./components/pages/ChatPage/ChatPage";
 
 export default function App() {
   return (
@@ -12,7 +13,7 @@ export default function App() {
           <Route path="/" element={<TestFlowPage />} />
           <Route path="/history" element={<TestHistoryPage />} />
           <Route path="/complaints" element={<ComplaintsPage />} />
-          <Route path="/chat/:id" element={<TestFlowPage />} />
+          <Route path="/chat/:id" element={<ChatPage />} />
           <Route path="/recommendations" element={<RecommendationsPage />} />
         </Routes>
       </BrowserRouter>
