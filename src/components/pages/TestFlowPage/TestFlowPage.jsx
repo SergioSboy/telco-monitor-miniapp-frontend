@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ReactComponent as HistoryIcon } from './../../../assets/icons/history.svg';
 
 import styles from './TestFlowPage.module.css';
 import Header from "../../common/Header/Header";
@@ -10,6 +12,7 @@ import TestResult from "./TestResult/TestResult";
 export default function TestFlowPage() {
     const [step, setStep] = useState('initial');
     const [result, setResult] = useState(null);
+    const navigate = useNavigate();
 
     const startTest = () => {
         setStep('loading');
@@ -27,6 +30,15 @@ export default function TestFlowPage() {
             } />
 
             <main className={styles.main}>
+                <button
+                    className={styles.historyButton}
+                    onClick={() => navigate('/history')}
+                    aria-label="История"
+                >
+                    <HistoryIcon />
+                </button>
+
+
                 {step === 'initial' && <TestStart onStart={startTest} />}
                 {step === 'loading' && <TestLoader />}
                 {step === 'done' && result && <TestResult result={result} />}

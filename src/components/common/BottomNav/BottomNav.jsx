@@ -5,7 +5,6 @@ import styles from './BottomNav.module.css';
 const navItems = [
     { label: 'Связь', path: '/' },
     { label: 'Жалобы', path: '/complaints' },
-    { label: 'История', path: '/history' },
     { label: 'Советы', path: '/recommendations' },
 ];
 
