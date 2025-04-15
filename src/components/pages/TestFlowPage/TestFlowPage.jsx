@@ -30,6 +30,8 @@ export default function TestFlowPage() {
             } />
 
             <main className={styles.main}>
+
+                { step === 'initial' && (
                 <button
                     className={styles.historyButton}
                     onClick={() => navigate('/history')}
@@ -37,6 +39,8 @@ export default function TestFlowPage() {
                 >
                     <HistoryIcon />
                 </button>
+
+                ) }
 
 
                 {step === 'initial' && <TestStart onStart={startTest} />}
