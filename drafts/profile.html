@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Профиль</title>
+    <style>
+        :root {
+            --primary: #00B956;
+            --bg: #f9fafb;
+            --text: #1e1e1e;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        main {
+            flex: 1;
+            padding: 1.5rem 1rem 6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            font-size: 1rem;
+        }
+
+        .row {
+            margin-bottom: 0.8rem;
+        }
+
+        .label {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        .value {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+
+        nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-around;
+            padding: 0.75rem 0.5rem;
+        }
+
+        .nav-btn {
+            flex: 1;
+            margin: 0 0.25rem;
+            padding: 0.6rem 0.4rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: #f3f4f6;
+            color: #444;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn.active {
+            background-color: var(--primary);
+            color: white;
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body>
+
+<header>Профиль пользователя</header>
+
+<main>
+    <div class="card">
+        <div class="row">
+            <div class="label">ФИО</div>
+            <div class="value">Иванов Иван Иванович</div>
+        </div>
+        <div class="row">
+            <div class="label">Номер телефона</div>
+            <div class="value">+7 999 123-45-67</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="row">
+            <div class="label">Подключенный тариф</div>
+            <div class="value">Гигабезлимит</div>
+        </div>
+    </div>
+</main>
+
+<nav>
+    <button class="nav-btn active">Профиль</button>
+    <button class="nav-btn">Связь</button>
+    <button class="nav-btn">Жалобы</button>
+    <button class="nav-btn">История</button>
+</nav>
+
+</body>
+</html>
