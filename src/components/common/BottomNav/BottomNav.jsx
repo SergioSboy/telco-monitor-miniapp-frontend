@@ -5,7 +5,7 @@ import styles from './BottomNav.module.css';
 const navItems = [
     { label: 'Связь', path: '/' },
     { label: 'Жалобы', path: '/complaints' },
-    { label: 'Связь', path: '/profile' },
+    { label: 'Профиль', path: '/profile' },
 ];
 
 export default function BottomNav() {
