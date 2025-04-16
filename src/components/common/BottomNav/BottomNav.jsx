@@ -6,6 +6,7 @@ const navItems = [
     { label: 'Связь', path: '/' },
     { label: 'Жалобы', path: '/complaints' },
     { label: 'Советы', path: '/recommendations' },
+    { label: 'Профиль', path: '/profile' },
 ];
 
 export default function BottomNav() {
