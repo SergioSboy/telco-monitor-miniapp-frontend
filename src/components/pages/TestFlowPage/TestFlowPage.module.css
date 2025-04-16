@@ -82,3 +82,27 @@
     justify-content: center;
     z-index: 1;
 }
+
+.recommendationButton {
+    position: fixed;
+    right: 1rem;
+    bottom: 6rem;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+    color: var(--primary);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+.recommendationButton:hover {
+    transform: scale(1.05);
+}

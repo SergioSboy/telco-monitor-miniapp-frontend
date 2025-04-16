@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ReactComponent as HistoryIcon } from './../../../assets/icons/history.svg';
+import { ReactComponent as RecommendationIcon } from './../../../assets/icons/reccomendation.svg';
+
 
 import styles from './TestFlowPage.module.css';
 import Header from "../../common/Header/Header";
@@ -46,6 +48,16 @@ export default function TestFlowPage() {
                 {step === 'initial' && <TestStart onStart={startTest} />}
                 {step === 'loading' && <TestLoader />}
                 {step === 'done' && result && <TestResult result={result} />}
+
+                {step === 'initial' && (
+                    <button
+                        className={styles.recommendationButton}
+                        onClick={() => navigate('/recommendations')}
+                        aria-label="Рекомендации"
+                    >
+                        <RecommendationIcon />
+                    </button>
+                )}
             </main>
 
             <BottomNav />
