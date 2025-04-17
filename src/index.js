@@ -5,6 +5,11 @@ import App from './App';
 import initializeTelegramSDK from "./telegramMock";
 import AuthProvider from "./provider/AuthProvider";
 
+if (process.env.NODE_ENV === 'development') {
+    const { worker } = require('./mocks/browser');
+    worker.start();
+}
+
 initializeTelegramSDK();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
