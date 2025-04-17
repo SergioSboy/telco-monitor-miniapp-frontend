@@ -3,25 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import { ReactComponent as HistoryIcon } from './../../../assets/icons/history.svg';
 import { ReactComponent as RecommendationIcon } from './../../../assets/icons/reccomendation.svg';
 
-
 import styles from './TestFlowPage.module.css';
 import Header from "../../common/Header/Header";
 import BottomNav from "../../common/BottomNav/BottomNav";
 import TestStart from "./TestStart/TestStart";
 import TestLoader from "./TestLoader/TestLoader";
 import TestResult from "./TestResult/TestResult";
+import useSpeedTest from "../../../hooks/useSpeedTest";
 
 export default function TestFlowPage() {
-    const [step, setStep] = useState('initial');
-    const [result, setResult] = useState(null);
+    const [step, setStep] = useState('initial'); // Убираем типизацию
     const navigate = useNavigate();
 
-    const startTest = () => {
+    const { runTest, result, error } = useSpeedTest();
+
+    const startTest = async () => {
         setStep('loading');
-        setTimeout(() => {
-            setResult({ ping: 42, download: 35.6, upload: 8.2 });
-            setStep('done');
-        }, 3000);
+        await runTest();  // запуск теста
+        setStep('done');  // после завершения теста меняем шаг на 'done'
     };
 
     return (
@@ -32,22 +31,20 @@ export default function TestFlowPage() {
             } />
 
             <main className={styles.main}>
-
-                { step === 'initial' && (
-                <button
-                    className={styles.historyButton}
-                    onClick={() => navigate('/history')}
-                    aria-label="История"
-                >
-                    <HistoryIcon />
-                </button>
-
-                ) }
-
+                {step === 'initial' && (
+                    <button
+                        className={styles.historyButton}
+                        onClick={() => navigate('/history')}
+                        aria-label="История"
+                    >
+                        <HistoryIcon />
+                    </button>
+                )}
 
                 {step === 'initial' && <TestStart onStart={startTest} />}
                 {step === 'loading' && <TestLoader />}
                 {step === 'done' && result && <TestResult result={result} />}
+                {step === 'done' && error && <p>{error}</p>}
 
                 {step === 'initial' && (
                     <button
