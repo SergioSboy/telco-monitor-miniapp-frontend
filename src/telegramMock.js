@@ -1,4 +1,4 @@
-import { mockTelegramEnv, miniApp } from "@telegram-apps/sdk";
+import { mockTelegramEnv, miniApp } from "@telegram-apps/sdk-react";
 
 const initializeTelegramSDK = () => {
     try {
