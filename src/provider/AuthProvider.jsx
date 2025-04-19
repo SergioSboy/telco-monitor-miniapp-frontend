@@ -7,17 +7,18 @@ import PropTypes from "prop-types";
 
 export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
-    const [userRole, setUserRole] = useState(null);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const { initDataRaw } = retrieveLaunchParams();
 
     useEffect(() => {
         setLoading(true);
         userService
             .telegram_login(initDataRaw)
-            .then((response) => {
-                setUserRole(response.role);
+            .then(() => {
+                setIsAuthenticated(true); // успешно прошёл проверку
             })
             .catch((error) => {
+                setIsAuthenticated(false);
                 console.error("Ошибка при загрузке:", error);
             })
             .finally(() => setLoading(false));
@@ -28,7 +29,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     return (
-            <AuthContext.Provider value={{ userRole }}>
+            <AuthContext.Provider value={{ isAuthenticated }}>
                 {children}
             </AuthContext.Provider>
 
