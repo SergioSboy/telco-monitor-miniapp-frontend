@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { userService } from "../api/userService";
-import { retrieveLaunchParams } from "@telegram-apps/sdk-react";
+import { retrieveLaunchParams } from "@telegram-apps/sdk";
 import { AuthContext } from "../contexts/AuthContext";
 import Preloader from "../components/common/Preloader/Preloader";
 import PropTypes from "prop-types";
@@ -28,11 +28,10 @@ export const AuthProvider = ({ children }) => {
     }
 
     return (
-        <>
             <AuthContext.Provider value={{ userRole }}>
                 {children}
             </AuthContext.Provider>
-        </>
+
     );
 };
 
