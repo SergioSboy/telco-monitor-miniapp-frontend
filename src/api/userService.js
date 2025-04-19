@@ -23,4 +23,11 @@ export const userService = Object.freeze({
         });
         return response.data;
     },
+
+    getRecommendations: async () => {
+        const response = await axiosInstance.get("/recommendations", {
+            withCredentials: true,
+        });
+        return response.data;
+    },
 });

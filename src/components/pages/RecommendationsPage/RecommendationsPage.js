@@ -2,31 +2,27 @@ import React from 'react';
 import styles from './RecommendationsPage.module.css';
 import Header from "../../common/Header/Header";
 import BottomNav from "../../common/BottomNav/BottomNav";
-
-const mockRecommendations = [
-    {
-        text: 'Переключитесь с 5G на 4G — в перегруженных районах 4G может быть стабильнее.',
-        link: '#',
-    },
-    {
-        text: 'Включите и выключите режим полёта, чтобы перезапустить соединение.',
-    },
-    {
-        text: 'Проверьте наличие системных обновлений и прошивок модема.',
-        link: '#',
-    },
-    {
-        text: 'Переместитесь ближе к окну или на открытую местность для улучшения сигнала.',
-    },
-];
+import { useRecommendations } from "../../../hooks/useRecommendations";
+import Preloader from "../../common/Preloader/Preloader";
+import ErrorModal from "../../common/ErrorModal/ErrorModal";
 
 export default function RecommendationsPage() {
+    const { recommendations, loading, error } = useRecommendations();
+
+    if (loading) return <Preloader />;
+
     return (
         <div className={styles.page}>
             <Header title="Советы по улучшению связи" />
 
             <main className={styles.main}>
-                {mockRecommendations.map((r, index) => (
+                {error && (
+                    <ErrorModal>
+                        <p>Не удалось загрузить рекомендации 😥</p>
+                    </ErrorModal>
+                )}
+
+                {recommendations.map((r, index) => (
                     <div key={index} className={styles.card}>
                         <div className={styles.text}>{r.text}</div>
                         {r.link && (
