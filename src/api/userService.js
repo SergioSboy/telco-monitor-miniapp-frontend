@@ -16,4 +16,11 @@ export const userService = Object.freeze({
         const response = await axiosInstance.get("/me", { withCredentials: true });
         return response.data;
     },
+
+    getConnectionTests: async () => {
+        const response = await axiosInstance.get("/connection_tests", {
+            withCredentials: true,
+        });
+        return response.data;
+    },
 });
