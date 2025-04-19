@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
+    <!-- Голова -->
+    <circle cx="60" cy="60" r="56" stroke="#00B956" stroke-width="8" fill="#ffffff" />
+
+    <!-- Глаза -->
+    <circle cx="42" cy="48" r="6" fill="#00B956" />
+    <circle cx="78" cy="48" r="6" fill="#00B956" />
+
+    <!-- Ровный рот по центру -->
+    <path d="M40 80 C60 65, 60 65, 80 80" stroke="#00B956" stroke-width="6" fill="none" stroke-linecap="round" />
+</svg>

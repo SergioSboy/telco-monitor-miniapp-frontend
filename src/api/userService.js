@@ -11,4 +11,9 @@ export const userService = Object.freeze({
         );
         return response.data;
     },
+
+    getProfile: async () => {
+        const response = await axiosInstance.get("/me", { withCredentials: true });
+        return response.data;
+    },
 });
